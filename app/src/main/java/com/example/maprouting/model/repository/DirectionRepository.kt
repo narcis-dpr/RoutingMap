@@ -22,7 +22,6 @@ class DirectionRepository @Inject constructor(
                 latLngToString(sourceLocation)!!,
                 latLngToString(destinationLocation)!!,
             )
-            println(" the result is : ${result.routes[0].legs[0].directionSteps[0].startLocation.latitude}")
             emit(ResultWrapper.Success(result))
         } catch (e: HttpException) {
             emit(ResultWrapper.Error(e.toString()))

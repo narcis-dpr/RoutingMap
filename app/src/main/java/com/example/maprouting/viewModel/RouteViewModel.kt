@@ -10,6 +10,7 @@ import com.example.maprouting.utiles.data
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import org.neshan.common.model.LatLng
+import org.neshan.servicessdk.direction.model.NeshanDirectionResult
 import org.neshan.servicessdk.direction.model.Route
 import javax.inject.Inject
 
@@ -17,8 +18,8 @@ import javax.inject.Inject
 class RouteViewModel @Inject constructor(
     private val directionRepository: IDirectionRepository,
 ) : ViewModel() {
-    private val _route: MutableLiveData<Route?> = MutableLiveData()
-    val route: LiveData<Route?> = _route
+    private val _route: MutableLiveData<NeshanDirectionResult?> = MutableLiveData()
+    val route: LiveData<NeshanDirectionResult?> = _route
     fun getDirections(
         sourceLocation: LatLng,
         destinationLocation: LatLng,
@@ -32,7 +33,7 @@ class RouteViewModel @Inject constructor(
                     is ResultWrapper.Error -> println("**")
                     is ResultWrapper.Loading -> println("***")
                     is ResultWrapper.Success -> {
-                        _route.postValue(result.data.routes[0])
+                        _route.postValue(result.data)
                     }
                 }
 
@@ -43,6 +44,5 @@ class RouteViewModel @Inject constructor(
 
     override fun onCleared() {
         super.onCleared()
-        println("*** im cleared ")
     }
 }

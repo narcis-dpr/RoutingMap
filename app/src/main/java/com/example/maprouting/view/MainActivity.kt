@@ -347,12 +347,12 @@ class MainActivity() : AppCompatActivity() {
                 } else {
                     routeOverviewPolylinePoints = java.util.ArrayList(
                         PolylineEncoding.decode(
-                            route.overviewPolyline.encodedPolyline,
+                            route.routes[0].overviewPolyline.encodedPolyline,
                         ),
                     )
                     decodedStepByStepPath = java.util.ArrayList()
 
-                    for (step in route.legs[0].directionSteps) {
+                    for (step in route.routes[0].legs[0].directionSteps) {
                         decodedStepByStepPath!!.addAll(PolylineEncoding.decode(step.encodedPolyline))
                     }
                     onMapPolyline = Polyline(routeOverviewPolylinePoints, getLineStyle())
