@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">MapRouting</string>
+    <string name="start_press">برای شروع روی مبدا مورد نظر خود لانگ پرس کنید</string>
+    <string name="target_press">اکنون روی مقصد مورد نظر خود لانگ پرس کنید</string>
+    <string name="route_detect">مسیر مورد نظر پیدا شد. برای شبیه سازی مسیر بر روی کلید روبرو کلیک کنید</string>
+</resources>
