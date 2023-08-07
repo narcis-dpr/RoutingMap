@@ -10,4 +10,4 @@ https://drive.google.com/file/d/1XylTghdNlbwrTT_Dx67lMb7irGMbBydB/view?usp=shari
 
 
 
-
+مثال از اپلیکشن استفاده از نقشه نشان با استفاده از ابزارهای Flow و Hilt و معماری MVVM
